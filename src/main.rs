@@ -29,8 +29,8 @@ fn mandlebrot_buf(width: usize, height: usize, max_iterations: u16) -> Vec<Vec<C
         let mut x_index = 0;
         for _x in y {
             if y_index > 0 && x_index > 0 {
-                let x0 = ((x_index as f32 / height as f32) * 2.47) - 2.25;
-                let y0 = ((y_index as f32 / width as f32) * 2.47) - 1.0;
+                let x0 = ((x_index as f32 / height as f32) * 2.47) - 2.0;
+                let y0 = ((y_index as f32 / width as f32) * 2.47) - 1.25;
             
                 let mut x_t: f32 = 0.0;
                 let mut y_t: f32 = 0.0;
@@ -63,7 +63,7 @@ fn main() {
     let ctx = sdl2::init().unwrap();
     let subsys = ctx.video().unwrap();
 
-    const WIDTH: usize = 800;
+    const WIDTH: usize = 600;
     const HEIGHT: usize = 600;
 
     let window = subsys.window("Mandlebrot Set", WIDTH.try_into().unwrap(), HEIGHT.try_into().unwrap()).position_centered().build().unwrap();
