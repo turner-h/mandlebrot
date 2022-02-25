@@ -44,7 +44,7 @@ fn mandlebrot_buf(width: usize, height: usize, max_iterations: u16) -> Vec<Vec<C
                 }
 
                 let color = colors[iteration as usize];
-                println!("Pixel {}, {} finished with {} iterations and color {:?}", x_index, y_index, iteration, color);
+                //println!("Pixel {}, {} finished with {} iterations and color {:?}", x_index, y_index, iteration, color);
                 buf[y_index - 1][x_index - 1] = color;  
             }
             x_index += 1;
